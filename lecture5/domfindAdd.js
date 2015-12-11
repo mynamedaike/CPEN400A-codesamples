@@ -46,3 +46,116 @@ window.onload = function() {
 	findAndAdd(document.getElementById("one"), paraFinder);
 	console.log(document.body);
 };
+
+// create a new request by new XMLHttpRequest();
+// connect to the server by open() function
+// send data to the server by send() function
+// set up a call-back by onReadyStateChange function
+
+var x = new XMLHttpRequest();
+x.open('GET', '/example.txt');
+x.onreadystatechange = function() {               //XHR1 onreadystatechange
+	if(x.readyState == 4 && x.status = 200) {     //check readyState and status
+		var type = x.getResponseHeader('Content-type');
+		if(type == 'application.json') {
+			// Parse JSON here and take action
+		}
+	}
+};
+x.send();
+
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'example.html');
+xhr.onload = function() {      //XHR2 onload
+	if(xhr.status == 200) {         //only check status
+		console.log(xhr.responseText);
+		console.log('Request success');
+	}
+};
+xhr.onabort = function() {
+	console.log('Request aborted');
+};
+xhr.timeout = 200;
+xhr.ontimeout = function() {
+	console.log('Request timed out');
+};
+xhr.onerror = function() {
+	console.log('error occured on request');
+}
+xhr.send();
+
+var times = 0;
+OK.onclick = function() {
+	var x = new XMLHttpRequest();
+	x.open('GET','example.html');
+	/* x.onreadystatechange = function() {
+		if(x.readyState == 4 && x.status == 200) {
+			var type = x.getResponseHeader('Content-type');
+			if(type == 'application.json') {
+				
+			}
+		}
+	} */
+	x.onload = function() {
+		if(x.status == 200)
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
